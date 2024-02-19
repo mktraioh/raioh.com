@@ -87,7 +87,7 @@ export default function BeSellerContainer({ children }: Props) {
         errors.logo = t("required");
       }
       if (!values.images[1]) {
-        errors.background = t("required");
+        errors.background = t("");
       }
       if (!values.title[i18n.language]) {
         errors.title = t("required");
@@ -122,7 +122,7 @@ export default function BeSellerContainer({ children }: Props) {
         errors.address = t("required");
       }
       if (!values.categories.length) {
-        errors.categories = t("required");
+        errors.categories = t("");
       }
       if (!values.tags.length) {
         errors.tags = t("required");

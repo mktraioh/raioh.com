@@ -87,7 +87,7 @@ export default function BeSellerContainer({ children }: Props) {
         errors.logo = t("required");
       }
       if (!values.images[1]) {
-        errors.background = t("required");
+        errors.background = t("");
       }
       if (!values.title[i18n.language]) {
         errors.title = t("required");

@@ -122,7 +122,7 @@ export default function BeSellerContainer({ children }: Props) {
         errors.address = t("required");
       }
       if (!values.categories.length) {
-        errors.categories = t("required");
+        errors.categories = t("");
       }
       if (!values.tags.length) {
         errors.tags = t("required");

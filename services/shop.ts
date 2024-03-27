@@ -12,6 +12,8 @@ const shopService = {
     request.get(`/rest/shops/paginate?type=shop&${params}`),
   getById: (id: number, params?: any): Promise<SuccessResponse<IShop>> =>
     request.get(`/rest/shops/${id}`, { params }),
+  getBySlug: (id: string, params?: any): Promise<SuccessResponse<IShop>> =>
+    request.get(`/rest/shops/slug/${id}`, { params }),
   getRecommended: (params?: any): Promise<Paginate<IShop>> =>
     request.get(`/rest/shops/recommended`, { params }),
   search: (params: any): Promise<Paginate<IShop>> =>

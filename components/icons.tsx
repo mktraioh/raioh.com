@@ -6,12 +6,14 @@ import {
 
 /* eslint-disable @next/next/no-img-element */
 export const BrandLogo = () => (
-  <img src={BRAND_LOGO} width="129" height="28" alt="Brand logo" />
+  <img src={`${BRAND_LOGO}?t=${Date.now()}`} width="120" height="30" alt="Brand logo"  style={{ borderRadius: 0 }} />
 );
 
 export const BrandLogoDark = () => (
-  <img src={BRAND_LOGO_DARK} width="129" height="28" alt="Brand logo dark" />
+  <img src={`${BRAND_LOGO_DARK}?t=${Date.now()}`} width="120" height="30" alt="Brand logo dark"  style={{ borderRadius: 0 }} />
 );
+
+
 
 export const DoubleCheckIcon = () => (
   <svg

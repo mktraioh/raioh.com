@@ -22,6 +22,8 @@ const categoryService = {
     }),
   getById: (id: string, params: any = {}): Promise<SuccessResponse<Category>> =>
     request.get(`/rest/categories/${id}`, { params }),
+  getBySlug: (slug: string, params: any = {}): Promise<SuccessResponse<Category>> =>
+    request.get(`/rest/categories/slug/${slug}`, { params }),
 };
 
 export default categoryService;

@@ -160,6 +160,7 @@ export interface Category {
   id: number;
   translation: Translation;
   uuid?: string;
+  slug?: string;
   children?: Category[];
   img?: string;
   input: number;

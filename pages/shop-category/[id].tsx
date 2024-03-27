@@ -32,11 +32,13 @@ export default function ShopCategorySinglePage({ uiType = "1" }: PageProps) {
   const { locale } = useLocale();
   const { query } = useRouter();
   const categoryId = String(query?.id);
+  console.log(categoryId);
+  const { data } = useQuery(["category", categoryId, locale], () => {
+//   console.log(categoryService.getBySlug(categoryId, params));
+    return categoryService.getBySlug(categoryId, params);
+  }
 
-  const { data } = useQuery(["category", categoryId, locale], () =>
-    categoryService.getById(categoryId, params)
   );
-
   return (
     <>
       <SEO title={data?.data?.translation?.title} />
@@ -53,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const obj = createSettings(settingsData?.data);
 
   await queryClient.prefetchQuery(["category", categoryId, locale], () =>
-    categoryService.getById(categoryId, params)
+    categoryService.getBySlug(categoryId, params)
   );
 
   return {

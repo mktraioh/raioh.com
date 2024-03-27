@@ -53,7 +53,7 @@ export default function CategoryContainer({
                 <SwiperSlide key={"store" + item.id}>
                   <Link
                     key={item.uuid}
-                    href={`/shop-category/${item.uuid}`}
+                    href={`/shop-category/${item.slug}`}
                     className={cls.item}
                   >
                     <div className={cls.imgWrapper}>

@@ -13,8 +13,8 @@ import { error } from "components/alert/toast";
 import { useAuth } from "contexts/auth/auth.context";
 import { setCookie } from "utils/session";
 import { LoginCredentials } from "interfaces/user.interface";
-import { Stack } from "@mui/material";
-import { defaultUser } from "constants/config";
+// import { Stack } from "@mui/material";
+// import { defaultUser } from "constants/config";
 
 type Props = {};
 interface formValues {
@@ -135,19 +135,19 @@ export default function LoginForm({}: Props) {
           {t("login")}
         </PrimaryButton>
       </div>
-      <div className={cls.userInfo}>
-        <Stack>
+      {/* <div className={cls.userInfo}> */}
+        {/* <Stack>
           <span className={cls.login}>{defaultUser.login}</span>
           <span className={cls.password}>{defaultUser.password}</span>
-        </Stack>
-        <button
+        </Stack> */}
+        {/* <button
           onClick={() => handleCopy(defaultUser.login, defaultUser.password)}
           type={"button"}
           className={cls.copy}
         >
           {t("copy")}
-        </button>
-      </div>
+        </button> */}
+      {/* </div> */}
     </form>
   );
 }

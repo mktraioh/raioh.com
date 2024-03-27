@@ -76,7 +76,7 @@ export default function ShopSingle({ memberState }: Props) {
   const locale = i18n.language;
   const isDesktop = useMediaQuery("(min-width:1140px)");
   const { query, replace } = useRouter();
-  const shopId = Number(query.id);
+  const shopId = String(query.id);
   const currency = useAppSelector(selectCurrency);
   const { product, isOpen } = useAppSelector(selectProduct);
   const dispatch = useAppDispatch();
@@ -264,7 +264,7 @@ export default function ShopSingle({ memberState }: Props) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const queryClient = new QueryClient();
-  const shopId = Number(ctx.query.id);
+  const shopId = String(ctx.query.id);
   const groupId = Number(ctx.query.g);
   let memberState = getCookie("member", ctx);
   const locale = getLanguage(ctx.req.cookies?.locale);
@@ -277,7 +277,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   await queryClient.prefetchQuery(["shop", shopId, locale], () =>
-    shopService.getById(shopId)
+    shopService.getBySlug(shopId)
   );
 
   return {

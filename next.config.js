@@ -22,7 +22,7 @@ const nextConfig = {
       },
       {
         protocol: process.env.NEXT_PUBLIC_PROTOCOL,
-        hostname: 'demo-api.foodyman.org'
+        hostname: 'api.raioh.com'
       }
     ],
     minimumCacheTTL: 3600,
